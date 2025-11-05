@@ -1,7 +1,5 @@
 # TabMark - New Tab Extension
 
-![Логотип TabMark](TabMark/img/128.png)
-
 **TabMark — это ваш персональный командный центр в браузере. Замените стандартную новую вкладку на мощный, быстрый и полностью настраиваемый дашборд.**
 
 TabMark transforms your new tab into a powerful, fast, and fully customizable dashboard.
@@ -12,7 +10,6 @@ TabMark transforms your new tab into a powerful, fast, and fully customizable da
 
 | Главный экран | Редактор фона | Меню опций |
 | :---: | :---: | :---: |
-| ![Главный экран TabMark](TabMark/img/screenshot-1.png) | ![Редактор фона TabMark](TabMark/img/screenshot-2.png) | ![Меню опций TabMark](TabMark/img/screenshot-3.png) |
 
 ---
 
