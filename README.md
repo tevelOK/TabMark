@@ -47,4 +47,4 @@ TabMark transforms your new tab into a powerful, fast, and fully customizable da
 
 Если вы нашли ошибку, у вас есть предложение по улучшению или вы просто хотите задать вопрос, свяжитесь с нами:
 
-**Email:** [tevelok@bk.ru](mailto:tevelok@vk.com)
+**Email:** [tevelok@vk.com](mailto:tevelok@vk.com)
