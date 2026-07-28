@@ -114,7 +114,7 @@ We may update this Privacy Policy from time to time. The **Effective date** at t
 TabMark may be distributed as open source (e.g. on GitHub). The **published source** and **manifest** are the most precise reference for what the build can do; this policy is meant to explain it in plain language.
 
 **Questions about this Privacy Policy:**  
-**[tevelok@bk.ru](mailto:tevelok@bk.ru)**
+**[tevelok@bk.ru](mailto:tevelok@vk.com)**
 
 ---
 
