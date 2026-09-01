@@ -1,6 +1,6 @@
 # Privacy Policy for TabMark
 
-**Effective date:** April 2, 2026  
+**Effective date:** September 1, 2026  
 
 This Privacy Policy describes how the **TabMark** browser extension (“TabMark”, “we”, “us”, or “our”) handles information when you use it. TabMark is built around a **local-first** approach: **your start page data stays under your control** on your device unless you explicitly choose optional features that talk to third-party services.
 
@@ -49,6 +49,8 @@ TabMark requests only what it needs for documented features. In the current mani
 | **`identity`** | **Optional** sign-in to Google **when you enable** Google Drive backup/sync. |
 | **`alarms`** | Schedule **local** background tasks (e.g. sync checks you configure). |
 | **`geolocation`** | **Optional** coarse location for the **weather widget**, if you use it and the browser prompts you. |
+| **`favicon`** | Site icons on tiles, in History, Search, Statistics, and lists—from Chrome’s favicon cache by page URL; used only to render the UI and optionally pick a tile color. |
+| **Host access** (`http://*/*`, `https://*/*`) | **Broken-link checker**: a network request to URLs **you** saved in TabMark when you run the check. We do not read page content; data is not sent to TabMark servers. |
 
 If you do not use a feature, the related permission may still be declared in the manifest, but **network or sensitive use** is limited to what that feature requires (e.g. Drive only after you connect Google).
 
@@ -79,9 +81,12 @@ TabMark may make **outbound HTTPS requests** for the following reasons:
    - Used for **optional** Google sign-in / Drive operations **when you enable them**.
 
 3. **Favicons / site icons**:  
-   - The browser or common favicon resolution mechanisms may request icons from third parties (e.g. Google’s public favicon service or the site itself). These requests are **not** used to build a personal profile for us; we do not operate that infrastructure.
+   - The browser or common favicon resolution mechanisms (including the `favicon` permission and services such as Google Favicon) may request icons from third parties. These requests are **not** used to build a personal profile for us; we do not operate that infrastructure.
 
-4. **Fonts (UI)**:  
+4. **Broken-link checker**:  
+   - When you run “Broken links”, the extension sends network requests to addresses from **your** saved tiles to detect unavailable sites. **You** initiate the check; results are shown only in the UI; nothing is sent to TabMark servers.
+
+5. **Fonts (UI)**:  
    - The extension may load fonts from **Google Fonts** (`fonts.googleapis.com` / `fonts.gstatic.com`) as permitted by its content security policy.
 
 We do **not** embed third-party **advertising** or **analytics** trackers whose purpose is to profile you across the web.
