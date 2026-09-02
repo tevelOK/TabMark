@@ -47,7 +47,6 @@ TabMark requests only what it needs for documented features. In the current mani
 | **`management`** | List installed extensions **only** to power the “Apps” / extensions panel in the UI. |
 | **`contextMenus`** | Add “Add to TabMark” (or equivalent) in the context menu. |
 | **`identity`** | **Optional** sign-in to Google **when you enable** Google Drive backup/sync. |
-| **`alarms`** | Schedule **local** background tasks (e.g. sync checks you configure). |
 | **`geolocation`** | **Optional** coarse location for the **weather widget**, if you use it and the browser prompts you. |
 | **`favicon`** | Site icons on tiles, in History, Search, Statistics, and lists—from Chrome’s favicon cache by page URL; used only to render the UI and optionally pick a tile color. |
 | **Host access** (`http://*/*`, `https://*/*`) | **Broken-link checker**: a network request to URLs **you** saved in TabMark when you run the check. We do not read page content; data is not sent to TabMark servers. |
