@@ -1,6 +1,6 @@
 # Privacy Policy for TabMark
 
-**Effective date:** September 1, 2026  
+**Effective date:** October 21, 2026  
 
 This Privacy Policy describes how the **TabMark** browser extension (“TabMark”, “we”, “us”, or “our”) handles information when you use it. TabMark is built around a **local-first** approach: **your start page data stays under your control** on your device unless you explicitly choose optional features that talk to third-party services.
 
@@ -40,7 +40,7 @@ TabMark requests only what it needs for documented features. In the current mani
 | Permission | Purpose |
 |----------|---------|
 | **`storage` / `unlimitedStorage`** | Persist tiles, folders, settings, and related data locally. |
-| **`bookmarks`** | Integrate with browser bookmarks where the feature needs it (e.g. unified search / bookmark-related actions). |
+| **`bookmarks`** | Unified search over browser bookmarks, and **optional one-way import** of Chrome bookmarks into new TabMark folders (only when the user starts Import). Bookmark data stays on the device unless the user separately exports/syncs a TabMark backup. |
 | **`tabs`** | Work with open tabs (e.g. collecting tabs into a folder, new-tab behaviour). |
 | **`history`** | Read history **to power in-UI search/history features**; not uploaded to us. |
 | **`search`** | Integrate with the browser’s search capabilities where implemented. |
