@@ -40,7 +40,7 @@ TabMark requests only what it needs for documented features. In the current mani
 | Permission | Purpose |
 |----------|---------|
 | **`storage` / `unlimitedStorage`** | Persist tiles, folders, settings, and related data locally. |
-| **`bookmarks`** | Unified search over browser bookmarks, and **optional one-way import** of Chrome bookmarks into new TabMark folders (only when the user starts Import). Bookmark data stays on the device unless the user separately exports/syncs a TabMark backup. |
+| **`bookmarks`** | Unified search over browser bookmarks, and **optional one-way import** of Chrome bookmarks into TabMark folders (only when the user starts Import). You can also import from a **Netscape / Speed Dial HTML** file you pick on your computer — that path does not send the file anywhere. Bookmark data stays on the device unless the user separately exports/syncs a TabMark backup. |
 | **`tabs`** | Work with open tabs (e.g. collecting tabs into a folder, new-tab behaviour). |
 | **`history`** | Read history **to power in-UI search/history features**; not uploaded to us. |
 | **`search`** | Integrate with the browser’s search capabilities where implemented. |
@@ -94,8 +94,8 @@ We do **not** embed third-party **advertising** or **analytics** trackers whose 
 
 ## 6. Import and export
 
-**Export** lets you save a **`.json`** (or similar) file with your TabMark configuration to **your computer**.  
-**Import** lets you load such a file **from your computer** into the extension.
+**Export** lets you save an encrypted **`.tabmark`** backup of your TabMark configuration to **your computer** (older `.json` backups still import).  
+**Import** lets you load a `.tabmark` / `.json` file **from your computer**. You can also import bookmarks from a **Netscape / Speed Dial HTML** file or from **Chrome bookmarks** (one-way, only when you start that action).
 
 Those operations run **inside your browser**. The file is **yours**; we do not receive it unless you separately send it to us (e.g. by email for support).
 
