@@ -49,7 +49,7 @@ TabMark requests only what it needs for documented features. In the current mani
 | **`identity`** | **Optional** sign-in to Google **when you enable** Google Drive backup/sync. |
 | **`geolocation`** | **Optional** coarse location for the **weather widget**, if you use it and the browser prompts you. |
 | **`favicon`** | Site icons on tiles, in History, Search, Statistics, and lists—from Chrome’s favicon cache by page URL; used only to render the UI and optionally pick a tile color. |
-| **Host access** (`http://*/*`, `https://*/*`) | **Broken-link checker**: a network request to URLs **you** saved in TabMark when you run the check. We do not read page content; data is not sent to TabMark servers. |
+| **Optional host access** (`http://*/*`, `https://*/*`) | **Broken-link checker only**: requested **when you run** the check (or if you previously allowed it for weekly auto-check). Network requests go to URLs **you** saved in TabMark. We do not read page content; data is not sent to TabMark servers. |
 
 If you do not use a feature, the related permission may still be declared in the manifest, but **network or sensitive use** is limited to what that feature requires (e.g. Drive only after you connect Google).
 
@@ -60,7 +60,7 @@ If you do not use a feature, the related permission may still be declared in the
 If you choose to connect **Google Drive**:
 
 - Authentication uses Google’s **OAuth 2.0** with the scope required for **creating/accessing app-specific files** on **your** Drive (as declared in the extension manifest, e.g. `https://www.googleapis.com/auth/drive.file`).
-- A **backup** is prepared **when you use the sync/backup actions**—not silently sent to us. Before upload, the extension **encrypts** that payload (so the raw JSON of your tiles/settings is not stored on Drive in plain text).
+- A **backup** is prepared **when you use the sync/backup actions**—not silently sent to us. Before upload, the extension **encodes** the payload with AES-GCM (so the raw JSON of your tiles/settings is **not** stored on Drive as plain text). This is **not** end-to-end encryption with a password you choose: the app key ships with the extension, so anyone who can run TabMark can decode the same format. It protects against casual inspection of the Drive file, not against a determined attacker with the extension code.
 - The backup file resides in **your** Google account; **Google’s privacy policy** also applies to data stored on Google Drive.
 
 We do **not** receive a copy of your Drive backup on our own infrastructure.
@@ -83,7 +83,7 @@ TabMark may make **outbound HTTPS requests** for the following reasons:
    - The browser or common favicon resolution mechanisms (including the `favicon` permission and services such as Google Favicon) may request icons from third parties. These requests are **not** used to build a personal profile for us; we do not operate that infrastructure.
 
 4. **Broken-link checker**:  
-   - When you run “Broken links”, the extension sends network requests to addresses from **your** saved tiles to detect unavailable sites. **You** initiate the check; results are shown only in the UI; nothing is sent to TabMark servers.
+   - When you run “Broken links”, Chrome may ask for **optional** access to websites so the extension can probe URLs from **your** saved tiles. Weekly auto-check runs only if that access was already granted. Results stay in the UI; nothing is sent to TabMark servers.
 
 5. **Fonts (UI)**:  
    - The extension may load fonts from **Google Fonts** (`fonts.googleapis.com` / `fonts.gstatic.com`) as permitted by its content security policy.
@@ -94,7 +94,7 @@ We do **not** embed third-party **advertising** or **analytics** trackers whose 
 
 ## 6. Import and export
 
-**Export** lets you save an encrypted **`.tabmark`** backup of your TabMark configuration to **your computer** (older `.json` backups still import).  
+**Export** lets you save an encoded **`.tabmark`** backup of your TabMark configuration to **your computer** (older `.json` backups still import). Same encoding as Drive backups above—not a personal passphrase.  
 **Import** lets you load a `.tabmark` / `.json` file **from your computer**. You can also import bookmarks from a **Netscape / Speed Dial HTML** file or from **Chrome bookmarks** (one-way, only when you start that action).
 
 Those operations run **inside your browser**. The file is **yours**; we do not receive it unless you separately send it to us (e.g. by email for support).
